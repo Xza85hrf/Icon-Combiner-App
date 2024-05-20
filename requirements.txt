@@ -1,0 +1,4 @@
+Pillow 
+sv_ttk 
+torch 
+numpy 
