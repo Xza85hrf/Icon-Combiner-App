@@ -29,7 +29,7 @@ Icon Combiner App is a Python-based GUI application that allows users to combine
 2. Change to the project directory:
 
     ```bash
-    cd icon-combiner-app
+    cd Icon-Combiner-App
     ```
 
 3. Install the required dependencies:
