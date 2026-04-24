@@ -1,14 +1,22 @@
 # Icon Combiner App
 
-Icon Combiner App is a Python-based GUI application that allows users to combine two ICO icons into one. The application uses CUDA (if available) or CPU for upscaling the icons to a user-specified size or automatically sizes them based on their original dimensions. It provides detailed logging for error tracking and debugging.
+Icon Combiner App is a Python-based GUI application that allows users to
+combine two ICO icons into one. It resizes the icons to a user-specified
+size (or automatically to the larger of the two inputs) using PyTorch's
+`nn.functional.interpolate` — bilinear interpolation, accelerated on GPU
+via CUDA when available and falling back to CPU otherwise. The output is
+written as a single `.ico` file. This is classic interpolated resizing,
+not AI super-resolution; detail that is not in the source icons will not
+appear in the output.
 
 ## Features
 
-- Load two ICO icons and combine them into one.
-- Upscale icons using CUDA or CPU.
-- Choose automatic sizing based on original icon dimensions or specify a custom size.
+- Load two `.ico` icons and blend them into a single combined icon.
+- Resize via bilinear interpolation on CUDA (if available) or CPU.
+- Choose automatic sizing based on the original icon dimensions, or
+  specify a custom output size.
 - Detailed logging for error tracking and debugging.
-- Save the combined icon to a file.
+- Saves the combined result as an `.ico` file.
 
 ## Requirements
 
